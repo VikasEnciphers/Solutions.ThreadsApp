@@ -3,7 +3,6 @@
 - [1. Low Severities](#Low)
   * [Self-XSS](#self2)
   * [Hidden Directories](#Hidden Directories)
-  * [Cross-Site Request Forgery](#CSRF)
   * [No Password Policy](#noPass)
   * [Weak Reset Password Implementation](#WeakPass)
   * [Automatic User Enumeration](#userE)
@@ -67,27 +66,6 @@ python3 dirsearch.py -u http://localhost:3000 -e html,php
 
 6.Here it allows you to login as admin after registration
 ![dir](/images/dirsearch4.png)
-
-## Cross-site Request Forgery <a name="CSRF"></a>
-
-1. Open two accounts. One on the main browser window and the  other on incognito mode.
-
-2. Let's name them browser A and browser B.
-
-3.  On browser A open your profile  page and edit anything. Put your intercept on in your BurpSuite and click on update button in your profile page to update the credentials you have changed. This outgoing request will be captured in BurpSuite.
-
-4. Check this outgoing request in your BurpSuite, following window will appear, right click on it > Engagement Tools > Generate CSRF POC.
-![csrf](/images/csrf.png)
-
-5. On the following window, you can see various details like name, email, password etc. Now you can change the password here by typing it on ”password” and ”confirm password” value but make sure that you change the user Id value to the browser B user id, else the attack won't work.
-![csrf](/images/csrf2.png)
-
-6. Click on "Test in browser" button given below and copy the code which will be displayed.
-
-7. Open browser B and enter the code there and hit enter.
-
-8. Click on Submit Request.
- 
 
 ## No Password Policy <a name="noPass"></a>
 
